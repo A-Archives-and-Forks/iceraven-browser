@@ -170,13 +170,6 @@ class HomeSettingsFragment : PreferenceFragmentCompat() {
             onPreferenceChangeListener = createMetricPreferenceChangeListener("recently_visited")
         }
 
-        val openingScreenRadioHomepage =
-            requirePreference<RadioButtonPreference>(R.string.pref_key_start_on_home_always)
-        val openingScreenLastTab =
-            requirePreference<RadioButtonPreference>(R.string.pref_key_start_on_home_never)
-        val openingScreenAfterFourHours =
-            requirePreference<RadioButtonPreference>(R.string.pref_key_start_on_home_after_four_hours)
-
         requirePreference<Preference>(R.string.pref_key_wallpapers).apply {
             setOnPreferenceClickListener {
                 view?.findNavController()?.navigateWithBreadcrumb(
@@ -210,6 +203,7 @@ class HomeSettingsFragment : PreferenceFragmentCompat() {
             text = requireContext().settings().customHomepageUrl
             onPreferenceChangeListener = SharedPreferenceUpdater()
         }
+        setupOpeningScreenPreferences()
     }
 
     private fun createMetricPreferenceChangeListener(metricKey: String): Preference.OnPreferenceChangeListener {
@@ -227,5 +221,26 @@ class HomeSettingsFragment : PreferenceFragmentCompat() {
 
             true
         }
+    }
+
+    private fun setupOpeningScreenPreferences() {
+        val openingScreenRadioHomepage =
+            requirePreference<RadioButtonPreference>(R.string.pref_key_start_on_home_always).apply {
+                setDefaultValue(fenixSettings.alwaysOpenTheHomepageWhenOpeningTheApp)
+            }
+        val openingScreenLastTab =
+            requirePreference<RadioButtonPreference>(R.string.pref_key_start_on_home_never).apply {
+                setDefaultValue(fenixSettings.alwaysOpenTheLastTabWhenOpeningTheApp)
+            }
+        val openingScreenAfterFourHours =
+            requirePreference<RadioButtonPreference>(R.string.pref_key_start_on_home_after_four_hours).apply {
+                setDefaultValue(fenixSettings.openHomepageAfterFourHoursOfInactivity)
+            }
+
+        addToRadioGroup(
+            openingScreenRadioHomepage,
+            openingScreenLastTab,
+            openingScreenAfterFourHours,
+        )
     }
 }
