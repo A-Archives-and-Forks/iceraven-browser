@@ -51,7 +51,7 @@ jobs:
         with:
           gradle-home-cache-cleanup: true
           gradle-executable: /usr/bin/time
-          arguments: -v ./gradlew app:assemblefenixForkRelease -x lintVitalFenixForkRelease -PversionName=${{ env.VERSION_NAME }} --stacktrace
+          arguments: -v ./gradlew app:assembleForkRelease -PversionName=${{ env.VERSION_NAME }} --stacktrace
 
       - name: Setup build tool version variable
         shell: bash
