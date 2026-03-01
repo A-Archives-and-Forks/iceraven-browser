@@ -382,19 +382,3 @@ private fun DataChoicesMarketingSectionDisabledPreview(
         )
     }
 }
-
-@PreviewLightDark
-@Composable
-private fun DataChoicesMarketingSectionDisabledPreview() {
-    FirefoxTheme {
-        DataChoicesScreen(
-            store = DataChoicesStore(
-                initialState = DataChoicesState(
-                    studiesEnabled = false,
-                    telemetryEnabled = false,
-                    showMeasurementDataSection = false,
-                ),
-            ),
-        )
-    }
-}
