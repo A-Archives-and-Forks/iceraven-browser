@@ -125,6 +125,7 @@ import org.mozilla.fenix.components.toolbar.TabCounterInteractions.TabCounterCli
 import org.mozilla.fenix.components.toolbar.TabCounterInteractions.TabCounterLongClicked
 import org.mozilla.fenix.ext.nav
 import org.mozilla.fenix.ext.navigateSafe
+import org.mozilla.fenix.ext.settings
 import org.mozilla.fenix.nimbus.FxNimbus
 import org.mozilla.fenix.settings.ShortcutType
 import org.mozilla.fenix.settings.quicksettings.protections.cookiebanners.getCookieBannerUIMode
@@ -936,8 +937,10 @@ class BrowserToolbarMiddleware(
                 ""
             } else if (searchTerms.isNotBlank()) {
                 searchTerms
-            } else {
+            } else if (uiContext.settings().shouldStripUrl) {
                 URLStringUtils.toDisplayUrl(originalUrl)
+            } else {
+                originalUrl
             }
         }
 

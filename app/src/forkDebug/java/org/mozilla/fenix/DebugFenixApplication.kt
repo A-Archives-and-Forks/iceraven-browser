@@ -21,9 +21,9 @@ class DebugFenixApplication : FenixApplication() {
             )
         }
 
-        val isEnabled = components.strictMode.resetAfter(StrictMode.allowThreadDiskReads()) {
+        val isEnabled = components.strictMode.allowViolation(StrictMode::allowThreadDiskReads) {
             PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(getPreferenceKey(R.string.pref_key_leakcanary), true)
+                .getBoolean(getPreferenceKey(R.string.pref_key_leakcanary), BuildConfig.LEAKCANARY)
         }
 
         updateLeakCanaryState(isEnabled)
@@ -31,7 +31,7 @@ class DebugFenixApplication : FenixApplication() {
 
     override fun updateLeakCanaryState(isEnabled: Boolean) {
         LeakCanary.showLeakDisplayActivityLauncherIcon(isEnabled)
-        components.strictMode.resetAfter(StrictMode.allowThreadDiskReads()) {
+        components.strictMode.allowViolation(StrictMode::allowThreadDiskReads) {
             LeakCanary.config = LeakCanary.config.copy(dumpHeap = isEnabled)
         }
     }

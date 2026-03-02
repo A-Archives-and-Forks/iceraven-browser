@@ -721,6 +721,8 @@ dependencies {
 
     debugImplementation libs.androidx.compose.ui.tooling
     debugImplementation libs.leakcanary
+    forkDebugImplementation libs.androidx.compose.ui.tooling
+    forkDebugImplementation libs.leakcanary
 
     testImplementation project(':components:support-test')
     testImplementation project(':components:support-test-fakes')
