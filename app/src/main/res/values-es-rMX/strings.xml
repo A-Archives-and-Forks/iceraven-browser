@@ -1398,14 +1398,6 @@
   <string name="history_older">Más antiguo</string>
   <!-- Text shown when no history exists -->
   <string name="history_empty_message">No hay ningún historial</string>
-  <!-- Text for the snackbar action button to open a completed download. -->
-  <string name="download_completed_snackbar_action_open">Abrir</string>
-  <!-- Text for the snackbar action button to undo deleting a download. -->
-  <string name="download_undo_delete_snackbar_action">Deshacer</string>
-  <!-- Text shown when no download exists -->
-  <string name="download_empty_message_2">No hay descargas todavía</string>
-  <!-- Text description shown when no download exists -->
-  <string name="download_empty_description">Los archivos que descargues aparecerán aquí.</string>
   <!--
     Downloads
 

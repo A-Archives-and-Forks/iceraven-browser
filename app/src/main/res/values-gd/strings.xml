@@ -91,11 +91,6 @@
   -->
   <string name="felt_privacy_info_card_subtitle_3">Sguabaidh %1$s às na briosgaidean, an eachdraidh is dàta nan làraichean nuair a dhùineas tu an uinneag phrìobhaideach mu dheireadh.</string>
   <!--
-    Description of private browsing mode displayed to users on the homepage when they enable private mode.
-    %1$s is the name of the app (for example "Firefox").
-  -->
-  <string name="felt_privacy_info_card_subtitle_3">Sguabaidh %1$s às na briosgaidean, an eachdraidh is dàta nan làraichean nuair a dhùineas tu an uinneag phrìobhaideach mu dheireadh.</string>
-  <!--
     Clickable portion of the explanation for private browsing that links the user to our
     about privacy page.
     This string is used in felt_privacy_info_card_subtitle as the text for the link.
@@ -379,18 +374,6 @@
   <string name="browser_toolbar_translated_successfully">Chaidh %2$s a chur air an duilleag (%1$s o thùs).</string>
   <!-- CFR description for the browser toolbar describing the "Shake to summarize feature" -->
   <string name="browser_toolbar_summarize_cfr_description">Crath an t-uidheam agad is faigh geàrr-chunntas air an duilleag seo ann am priobadh na sùla. ⚡️</string>
-  <!--
-    Translation Toolbar
-
-    Translation toolbar label that is displayed when the current page has been translated by the translation feature.
-    %1$s is the name of the language that is displayed in the original page. (For example: English)
-    %2$s is the name of the language which the page was translated to. (For example: French)
-  -->
-  <string name="translation_toolbar_translated_from_and_to" tools:ignore="UnusedResources">Chaidh %2$s a chur air %1$s</string>
-  <!-- Content description for the translate toolbar action that opens the translations dialog. -->
-  <string name="translation_toolbar_expand_action">Fosgail siota nan eadar-theangachadh</string>
-  <!-- Content description for the translate toolbar action that closes the translations toolbar. -->
-  <string name="translation_toolbar_close_action">Leig seachad an teachdaireachd</string>
   <!--
     Translation Toolbar
 
@@ -941,8 +924,6 @@
   <string name="preferences_search_browsing_history">Lorg san eachdraidh bhrabhsaidh</string>
   <!-- Preference title for switch preference to suggest bookmarks when searching -->
   <string name="preferences_search_bookmarks">Lorg sna comharran-lìn</string>
-  <!-- Preference title for switch preference to show shortcuts when searching -->
-  <string name="preferences_show_shortcuts" tools:ignore="UnusedResources" moz:removedIn="147">Seall na h-ath-ghoiridean</string>
   <!-- Preference title for switch preference to suggest synced tabs when searching -->
   <string name="preferences_search_synced_tabs">Lorg am measg nan tabaichean sioncronaichte</string>
   <!-- Preference for account settings -->
