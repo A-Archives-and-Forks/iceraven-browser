@@ -90,52 +90,54 @@ class PythonEnvsPlugin implements Plugin<Project> {
             onlyIf { !envs.condas.empty }
         }
 
-        envs.condas.each { Conda env ->
-            String taskName = "Bootstrap_${env.type}_${env.name}"
+        project.afterEvaluate {
+            envs.condas.each { Conda env ->
+                String taskName = "Bootstrap_${env.type}_${env.name}"
 
-            def bootstrapTask = project.tasks.register(taskName) {
-                group = "setup"
+                def bootstrapTask = project.tasks.register(taskName) {
+                    group = "setup"
 
-                onlyIf {
-                    !env.envDir.exists() || isPythonInvalid(project, env)
-                }
-
-                def execOps = project.services.get(ExecOperations)
-
-                doFirst {
-                    File bDir = project.layout.buildDirectory.asFile.get()
-                    if (!bDir.exists()) bDir.mkdirs()
-                    env.envDir.mkdirs()
-                    env.envDir.deleteDir()
-                }
-
-                doLast {
-                    URL urlToConda = getUrlToDownloadConda(env)
-                    File installer = new File(project.layout.buildDirectory.asFile.get(), urlToConda.toString().split("/").last())
-
-                    if (!installer.exists()) {
-                        project.logger.quiet("Downloading ${installer.name}")
-                        project.ant.get(dest: installer) {
-                            url(url: urlToConda)
-                        }
+                    onlyIf {
+                        !env.envDir.exists() || isPythonInvalid(project, env)
                     }
 
-                    project.logger.quiet("Bootstrapping to ${env.envDir}")
-                    execOps.exec {
-                        if (isWindows) {
-                            commandLine installer, "/InstallationType=JustMe", "/AddToPath=0", "/RegisterPython=0", "/S", "/D=${env.envDir}"
-                        } else {
-                            commandLine "bash", installer, "-b", "-p", env.envDir
-                        }
+                    def execOps = project.services.get(ExecOperations)
+
+                    doFirst {
+                        File bDir = project.layout.buildDirectory.asFile.get()
+                        if (!bDir.exists()) bDir.mkdirs()
+                        env.envDir.mkdirs()
+                        env.envDir.deleteDir()
                     }
 
-                    pipInstall(project, env, env.packages, execOps)
-                    condaInstall(project, env, env.condaPackages, execOps)
-                }
-            }
+                    doLast {
+                        URL urlToConda = getUrlToDownloadConda(env)
+                        File installer = new File(project.layout.buildDirectory.asFile.get(), urlToConda.toString().split("/").last())
 
-            buildCondas.configure {
-                dependsOn bootstrapTask
+                        if (!installer.exists()) {
+                            project.logger.quiet("Downloading ${installer.name}")
+                            project.ant.get(dest: installer) {
+                                url(url: urlToConda)
+                            }
+                        }
+
+                        project.logger.quiet("Bootstrapping to ${env.envDir}")
+                        execOps.exec {
+                            if (isWindows) {
+                                commandLine installer, "/InstallationType=JustMe", "/AddToPath=0", "/RegisterPython=0", "/S", "/D=${env.envDir}"
+                            } else {
+                                commandLine "bash", installer, "-b", "-p", env.envDir
+                            }
+                        }
+
+                        pipInstall(project, env, env.packages, execOps)
+                        condaInstall(project, env, env.condaPackages, execOps)
+                    }
+                }
+
+                buildCondas.configure {
+                    dependsOn bootstrapTask
+                }
             }
         }
 
