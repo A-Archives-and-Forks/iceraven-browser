@@ -155,45 +155,6 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler, SystemIns
         )
     }
 
-    private val continuousOnboardingDefaultBrowserLauncher: ActivityResultLauncher<Intent> =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            continuousOnboardingFeature.onDefaultBrowserStepCompleted(
-                activity = requireActivity(),
-                resultCode = result.resultCode,
-            )
-        }
-
-    private val telemetryRecorder by lazy {
-        OnboardingTelemetryRecorder(
-            onboardingReason = if (requireComponents.settings.enablePersistentOnboarding) {
-                OnboardingReason.EXISTING_USER
-            } else {
-                OnboardingReason.NEW_USER
-            },
-            installSource = installSourcePackage(
-                packageManager = requireContext().application.packageManager,
-                packageName = requireContext().application.packageName,
-            ),
-        )
-    }
-
-    private val continuousOnboardingFeature by lazy {
-        val settings = requireContext().settings()
-        ContinuousOnboardingFeatureDefault(
-            settings = settings,
-            telemetryRecorder = telemetryRecorder,
-            stageProvider = ContinuousOnboardingStageProviderDefault(settings),
-            navigateToSyncSignIn = {
-                findNavController().nav(
-                    id = R.id.browserFragment,
-                    directions = OnboardingFragmentDirections.actionGlobalTurnOnSync(
-                        entrypoint = FenixFxAEntryPoint.NewUserOnboarding,
-                    ),
-                )
-            },
-        )
-    }
-
     private var readerModeAvailable = false
     private var translationsAvailable = false
 
