@@ -32,11 +32,42 @@ class AdjustMetricsService(private val application: Application) : MetricsServic
     override fun shouldTrack(event: Event): Boolean = false
 
     companion object {
-        const val META_PARTNER_ID = "34"
+        const val CONVERSION_EVENT_1 = 1
+        const val CONVERSION_EVENT_2 = 2
+        const val CONVERSION_EVENT_3 = 3
+        const val CONVERSION_EVENT_4 = 4
+        const val CONVERSION_EVENT_5 = 5
+        const val CONVERSION_EVENT_6 = 6
+        const val CONVERSION_EVENT_7 = 7
+        const val CONVERSION_EVENT_8 = 8
+        const val CONVERSION_EVENT_9 = 9
+        const val CONVERSION_EVENT_10 = 10
 
-        private fun enableOnlyMetaThirdPartySharing() {}
+        /**
+         * Records a glean event matching the Adjust conversion event, and sends the Adjust attribution ping.
+         */
+        @VisibleForTesting
+        internal fun sendGleanEventAndPing(
+            event: Event,
+            conversionEventRecorder: ConversionEventRecorder = GleanConversionEventRecorder(),
+        ) {
+            /* noop */
+        }
 
-        private fun disableMetaThirdPartySharing() {}
+        /**
+         * Sets third party sharing settings based on distribution and attribution.
+         */
+        @VisibleForTesting
+        internal fun applyThirdPartySharingSettings(
+            distribution: DistributionIdManager.Distribution,
+            isUserMetaAttributed: Boolean,
+            isUserTikTokAttributed: Boolean,
+            isUserRedditAttributed: Boolean,
+            isUserXTwitterAttributed: Boolean,
+            controller: ThirdPartySharingController = AdjustThirdPartySharingController(),
+        ) {
+            /* noop */
+        }
 
         @VisibleForTesting
         internal fun alreadyKnown(settings: Settings): Boolean {
