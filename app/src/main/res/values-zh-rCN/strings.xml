@@ -1768,8 +1768,6 @@
   <string name="create_tab_group_name_label">名称</string>
   <!-- Title for adding more tabs to a tab group. -->
   <string name="add_to_tab_group_title">添加到</string>
-  <!-- Content Description for "New tab group" panel. -->
-  <string name="add_to_new_tab_group_content_description">添加到新的标签页群组</string>
   <!-- Content Description for closing the "Add to Tab Group" panel. -->
   <string name="add_to_tab_group_bottom_sheet_grabber_content_description">添加到标签页群组，折叠拖拽手柄</string>
   <!-- Content Description for "New tab group" panel. -->

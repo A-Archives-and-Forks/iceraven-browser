@@ -1662,8 +1662,6 @@
   <string name="create_tab_group_name_label">Ime</string>
   <!-- Title for adding more tabs to a tab group. -->
   <string name="add_to_tab_group_title">Dodaj v</string>
-  <!-- Content Description for "New tab group" panel. -->
-  <string name="add_to_new_tab_group_content_description">Dodaj novi skupini zavihkov</string>
   <!-- Content Description for closing the "Add to Tab Group" panel. -->
   <string name="add_to_tab_group_bottom_sheet_grabber_content_description">Dodaj skupini zavihkov, strni držaj za vlečenje</string>
   <!-- Content Description for "New tab group" panel. -->

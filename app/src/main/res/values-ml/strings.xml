@@ -343,20 +343,6 @@
   <string name="translation_toolbar_expand_action">വിവൎത്തന കടലാസു തുറക്കുക</string>
   <!-- Content description for the translate toolbar action that closes the translations toolbar. -->
   <string name="translation_toolbar_close_action">സന്ദേശം തള്ളിക്കളയുക</string>
-  <!-- Link text for learning more about AI controls -->
-  <string name="ai_controls_learn_more">കൂടുതലറിയുക</string>
-  <!-- Title for the translations AI feature toggle -->
-  <string name="ai_controls_translations_title">മൊഴിമാറ്റങ്ങൾ</string>
-  <!-- Description for the translations AI feature toggle -->
-  <string name="ai_controls_translations_description">എല്ലാ മൊഴിമാറ്റങ്ങളും താങ്ങളുടെ ഉപകരണത്തിൽ സ്വകാര്യമായി തുടരും.</string>
-  <!-- Link text to navigate to more translations settings -->
-  <string name="ai_controls_more_translations_settings">മൊഴിമാറ്റ ക്രമീകരണങ്ങൾ</string>
-  <!-- Label shown above the list of features that will be blocked in the block AI dialog -->
-  <string name="ai_controls_block_dialog_what_will_be_blocked">എന്തെല്ലാം തടയപ്പെടും:</string>
-  <!-- Cancel button text in the block AI enhancements confirmation dialog -->
-  <string name="ai_controls_block_dialog_cancel">റദ്ദാക്കുക</string>
-  <!-- Block button text in the block AI enhancements confirmation dialog -->
-  <string name="ai_controls_block_dialog_block">തടയുക</string>
   <!--
     Page summaries
 

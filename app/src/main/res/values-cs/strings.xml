@@ -1729,8 +1729,6 @@
   <string name="create_tab_group_name_label">Název</string>
   <!-- Title for adding more tabs to a tab group. -->
   <string name="add_to_tab_group_title">Přidat do</string>
-  <!-- Content Description for "New tab group" panel. -->
-  <string name="add_to_new_tab_group_content_description">Přidat do nové skupiny panelů</string>
   <!-- Content Description for closing the "Add to Tab Group" panel. -->
   <string name="add_to_tab_group_bottom_sheet_grabber_content_description">Přidat do skupiny panelů, sbalit úchyt pro přetažení</string>
   <!-- Content Description for "New tab group" panel. -->
