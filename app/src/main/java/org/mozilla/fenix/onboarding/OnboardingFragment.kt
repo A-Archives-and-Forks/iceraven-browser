@@ -185,8 +185,6 @@ class OnboardingFragment : Fragment() {
                 ScreenContent()
             }
         }
-
-        requireContext().settings().promptToSetAsDefaultBrowserDisplayedInOnboarding = false
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -520,8 +518,6 @@ class OnboardingFragment : Fragment() {
             isMarketingTelemetryEnabled = settings.isMarketingTelemetryEnabled,
             isDailyUsagePingEnabled = false,
         )
-
-        requireComponents.analytics.metrics.track(Event.GrowthData.ConversionEvent6)
 
         findNavController().nav(
             id = R.id.onboardingFragment,

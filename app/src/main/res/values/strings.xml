@@ -706,8 +706,11 @@
     <string name="nova_onboarding_marketing_primary_button_text" tools:ignore="BrandUsage">Help Firefox</string>
 
     <!-- Marketing onboarding primary button text. -->
+    <string name="nova_onboarding_marketing_primary_button_text_2">Allow and Continue</string>
+
     <!-- Marketing onboarding secondary button text. -->
     <string name="nova_onboarding_marketing_secondary_button_text">No Thanks</string>
+
     <!-- Notifications onboarding title. 'Firefox' is intentionally hardcoded. -->
     <string name="nova_onboarding_notifications_title" tools:ignore="BrandUsage,UnusedResources">Notifications help you stay safer with Firefox</string>
 
