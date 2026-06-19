@@ -13,7 +13,7 @@
         android:id="@+id/search"
         android:icon="@drawable/ic_search"
         android:title="@string/addons_search_hint"
-        app:iconTint="?textPrimary"
+        app:iconTint="?attr/colorOnSurface"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         android:contentDescription="@string/addons_search_hint"
         app:showAsAction="ifRoom|collapseActionView" />

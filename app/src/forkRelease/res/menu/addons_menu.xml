@@ -19,7 +19,7 @@
         android:id="@+id/search"
         android:icon="@drawable/mozac_ic_search_24"
         android:title="@string/addons_search_hint"
-        app:iconTint="?textPrimary"
+        app:iconTint="?attr/colorOnSurface"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         android:contentDescription="@string/addons_search_hint"
         app:showAsAction="ifRoom|collapseActionView" />
