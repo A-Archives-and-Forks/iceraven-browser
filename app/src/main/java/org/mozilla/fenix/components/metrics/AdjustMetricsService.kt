@@ -12,6 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import mozilla.components.support.base.log.logger.Logger
 import org.mozilla.fenix.GleanMetrics.Pings
+import org.mozilla.fenix.distributions.DistributionIdManager
 import org.mozilla.fenix.utils.Settings
 
 class AdjustMetricsService(private val application: Application) : MetricsService {

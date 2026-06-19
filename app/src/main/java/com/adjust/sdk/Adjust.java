@@ -43,4 +43,7 @@ public class Adjust {
 
     public static void gdprForgetMe(Object ignored) {
     }
+
+    public static void trackThirdPartySharing(AdjustThirdPartySharing adjustThirdPartySharing) {
+    }
 }

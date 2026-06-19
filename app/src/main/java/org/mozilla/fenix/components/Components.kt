@@ -14,7 +14,6 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.getSystemService
 import com.google.android.play.core.review.ReviewManagerFactory
 import io.github.forkmaintainers.iceraven.components.PagedAMOAddonsProvider
-import androidx.core.app.NotificationManagerCompat
 import mozilla.components.concept.ai.controls.AIFeatureBlock
 import mozilla.components.concept.ai.controls.AIFeatureRegistry
 import mozilla.components.feature.addons.AddonManager
