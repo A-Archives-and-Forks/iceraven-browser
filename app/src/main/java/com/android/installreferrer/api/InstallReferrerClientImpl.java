@@ -1,6 +1,7 @@
 package com.android.installreferrer.api;
 
 import android.content.Context;
+import android.os.RemoteException;
 
 class InstallReferrerClientImpl extends InstallReferrerClient {
     private final Context mContext;
