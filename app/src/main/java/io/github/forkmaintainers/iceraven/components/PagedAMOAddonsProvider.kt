@@ -150,6 +150,53 @@ class PagedAMOAddonsProvider(
     }
 
     /**
+     * Interacts with the AMO search endpoint to get an addon based on any of its identifier.
+     *
+     * See: https://addons-server.readthedocs.io/en/latest/topics/api/addons.html#search
+     *
+     * @param id of the addon for which to get the download URL.
+     * Can be an addon's ID, GUID, or other unique identifier.
+     * @param readTimeoutInSeconds optional timeout in seconds to use when fetching the add-ons.
+     * @param language indicates in which language the translatable fields should be in, if no
+     * matching language is found then a fallback translation is returned using the default language.
+     * When it is null all translations available will be returned.
+     *
+     * @return an [Addon] configuration if it was successfully downloaded or null otherwise.
+     */
+    override suspend fun getAddonByID(
+        id: String,
+        readTimeoutInSeconds: Long?,
+        language: String?,
+    ): Addon? {
+        val langParam = when (!language.isNullOrEmpty()) {
+            true -> "&lang=$language"
+            else -> ""
+        }
+
+        return client.fetch(
+            Request(
+                url = "$serverURL/$API_VERSION/addons/search/?guid=$id$langParam",
+                readTimeout = Pair(readTimeoutInSeconds ?: DEFAULT_READ_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS),
+            ),
+        ).use { response ->
+            if (response.isSuccess) {
+                val responseBody = response.body.string(Charsets.UTF_8)
+                try {
+                    JSONObject(responseBody)
+                        .getAddonsFromSearchResults(language)
+                        .firstOrNull()
+                } catch (e: JSONException) {
+                    logger.error("Failed to get addon by uuid [$id]", e)
+                    null
+                }
+            } else {
+                logger.error("Failed to get addon by uuid [$id]. Status code: ${response.status}")
+                null
+            }
+        }
+    }
+
+    /**
      * Fetches all pages of add-ons from the given URL (following the "next"
      * field in the returned JSON) and combines the "results" arrays into that
      * of the first page. Returns that coalesced object.
@@ -433,6 +480,13 @@ enum class SortOption(val value: String) {
     NAME_DESC("-name"),
     DATE_ADDED("added"),
     DATE_ADDED_DESC("-added"),
+}
+
+internal fun JSONObject.getAddonsFromSearchResults(language: String? = null): List<Addon> {
+    val addonsJson = getJSONArray("results")
+    return (0 until addonsJson.length()).map { index ->
+        addonsJson.getJSONObject(index).toAddon(language)
+    }
 }
 
 internal fun JSONObject.getAddonsFromCollection(language: String? = null): List<Addon> {
