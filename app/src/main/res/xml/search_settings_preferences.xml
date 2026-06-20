@@ -111,11 +111,6 @@
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             android:defaultValue="true"
-            android:key="@string/pref_key_show_home_button"
-            android:title="@string/preferences_show_home_button"/>
-        <SwitchPreferenceCompat
-            app:iconSpaceReserved="false"
-            android:defaultValue="true"
             android:key="@string/pref_key_show_clipboard_suggestions"
             android:title="@string/preferences_show_clipboard_suggestions" />
         <SwitchPreferenceCompat
@@ -123,11 +118,6 @@
             android:defaultValue="true"
             android:key="@string/pref_key_show_voice_search"
             android:title="@string/preferences_show_voice_search" />
-        <SwitchPreferenceCompat
-            app:iconSpaceReserved="false"
-            android:defaultValue="true"
-            android:key="@string/pref_key_show_reader_mode_btn"
-            android:title="@string/preferences_show_reader_mode_btn" />
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             android:defaultValue="true"

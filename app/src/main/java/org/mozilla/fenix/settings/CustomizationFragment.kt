@@ -390,12 +390,6 @@ class CustomizationFragment : PreferenceFragmentCompat(), SystemInsetsPaddedFrag
     }
 
     private fun setupOtherCustomizationCategory() {
-        requirePreference<SwitchPreferenceCompat>(R.string.pref_key_show_display_name_insteadof_email).apply {
-            isChecked = requireContext().settings().showDisplayNameInsteadOfEmail
-
-            onPreferenceChangeListener = SharedPreferenceUpdater()
-        }
-
 
         requirePreference<SwitchPreferenceCompat>(R.string.pref_key_show_fullscreen_toast).apply {
             isChecked = requireContext().settings().shouldShowFullScreenToast

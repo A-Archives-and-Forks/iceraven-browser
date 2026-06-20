@@ -1505,11 +1505,6 @@ class Settings(
         default = true,
     )
 
-    var showDisplayNameInsteadOfEmail by booleanPreference(
-        appContext.getPreferenceKey(R.string.pref_key_show_display_name_insteadof_email),
-        default = true,
-    )
-
     var shouldRelinquishMemoryUnderPressure by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_relinquish_memory_under_pressure),
         default = true,
@@ -1522,11 +1517,6 @@ class Settings(
 
     var shouldSuggestShippedDomains by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_suggest_shipped_domains),
-        default = true,
-    )
-
-    var shouldShowHomeButton by booleanPreference(
-        appContext.getPreferenceKey(R.string.pref_key_show_home_button),
         default = true,
     )
 
@@ -1855,11 +1845,6 @@ class Settings(
 
     var shouldShowVoiceSearch by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_show_voice_search),
-        default = true,
-    )
-
-    var shouldShowReaderModeBtn by booleanPreference(
-        appContext.getPreferenceKey(R.string.pref_key_show_reader_mode_btn),
         default = true,
     )
 

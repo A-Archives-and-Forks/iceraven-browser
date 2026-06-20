@@ -137,19 +137,9 @@ class SearchEngineFragment : PreferenceFragmentCompat(), SystemInsetsPaddedFragm
                 isChecked = context.settings().shouldShowClipboardSuggestions
             }
 
-        val showReaderModeBtnPreference =
-            requirePreference<SwitchPreferenceCompat>(R.string.pref_key_show_reader_mode_btn).apply {
-                isChecked = context.settings().shouldShowReaderModeBtn
-            }
-
         val showQRScanSearchPreference =
             requirePreference<SwitchPreferenceCompat>(R.string.pref_key_show_qr_scan_search).apply {
                 isChecked = context.settings().shouldShowQRScanSearch
-            }
-
-        val showHomeButtonPreference =
-            requirePreference<SwitchPreferenceCompat>(R.string.pref_key_show_home_button).apply {
-                isChecked = context.settings().shouldShowHomeButton
             }
 
         val showSponsoredSuggestionsPreference =
@@ -190,9 +180,7 @@ class SearchEngineFragment : PreferenceFragmentCompat(), SystemInsetsPaddedFragm
         searchSuggestionsInPrivatePreference.onPreferenceChangeListener = SharedPreferenceUpdater()
         trendingSearchSuggestionsPreference.onPreferenceChangeListener = SharedPreferenceUpdater()
         recentSearchSuggestionsPreference.onPreferenceChangeListener = SharedPreferenceUpdater()
-        showReaderModeBtnPreference.onPreferenceChangeListener = SharedPreferenceUpdater()
         showQRScanSearchPreference.onPreferenceChangeListener = SharedPreferenceUpdater()
-        showHomeButtonPreference.onPreferenceChangeListener = SharedPreferenceUpdater()
         autocompleteURLsPreference.onPreferenceChangeListener = SharedPreferenceUpdater()
 
         searchSuggestionsPreference.setOnPreferenceClickListener {

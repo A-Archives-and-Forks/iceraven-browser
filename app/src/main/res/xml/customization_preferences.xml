@@ -166,10 +166,6 @@
         app:iconSpaceReserved="false"
         >
         <androidx.preference.SwitchPreferenceCompat
-            android:defaultValue="true"
-            android:key="@string/pref_key_show_display_name_insteadof_email"
-            android:title="@string/preferences_show_display_name_insteadof_email" />
-        <androidx.preference.SwitchPreferenceCompat
             android:key="@string/pref_key_show_fullscreen_toast"
             android:title="@string/preferences_show_fullscreen_toast" />
         <androidx.preference.SwitchPreferenceCompat

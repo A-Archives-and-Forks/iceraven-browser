@@ -6,8 +6,6 @@
     <string name="preferences_addons_customization">Configure custom add-ons source</string>
     <!-- Placeholder text shown in the search bar before a user enters text -->
     <string name="addons_search_hint">Search add-ons</string>
-    <!-- Preference for showing display name instead of email -->
-    <string name="preferences_show_display_name_insteadof_email">Show Display name instead of email in toolbar</string>
     <!-- Title for strip url preference in customization settings -->
     <string name="preferences_strip_url_title">Strip HTTP/HTTPS/WWW from URLs</string>
     <!-- Description for strip url preference in customization settings -->
@@ -38,11 +36,9 @@
     <string name="preferences_search_opened_tabs" >Search opened tabs</string>
     <string name="preferences_show_success_download_dialog">Completion dialog box</string>
     <string name="preferences_show_qr_scan_search">Show QR scan search</string>
-    <string name="preferences_show_reader_mode_btn">Show Reader Mode Button</string>
     <string name="preferences_other_customization">Others</string>
     <string name="preferences_show_fullscreen_toast">Fullscreen toast</string>
     <string name="preferences_suggest_shipped_domains">Show shipped domains suggestions</string>
-    <string name="preferences_show_home_button">Show home button</string>
     <string name="preferences_show_sign_in_button">Show Sign in button</string>
     <string name="preferences_set_homepage">Change homepage</string>
     <string name="preferences_default_homepage">Default Homepage</string>

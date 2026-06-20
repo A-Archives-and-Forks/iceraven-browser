@@ -21,9 +21,9 @@ import:
       pdfjs:
         - channel: developer
           value: {
-          download-button: true,
-          open-in-app-button: true
-        }
+            download-button: true,
+            open-in-app-button: true
+          }
   - path: ../android-components/components/feature/fxsuggest/fxsuggest.fml.yaml
     channel: release
     features:
@@ -519,8 +519,8 @@ features:
     variables:
       shouldUseNimbus:
         description: >
-            If true, the values for both SHIP and Fission set in this file apply.
-            Otherwise, the values from modules/libpref/init/StaticPrefList.yaml apply.
+          If true, the values for both SHIP and Fission set in this file apply.
+          Otherwise, the values from modules/libpref/init/StaticPrefList.yaml apply.
         type: Boolean
         default: false
       enabled:
@@ -958,13 +958,13 @@ features:
         default: true
 
   settings-search:
-      description: Feature to allow users to search for settings.
-      variables:
-        enabled:
-          description: >
-            Enables the user to search for settings.
-          type: Boolean
-          default: true
+    description: Feature to allow users to search for settings.
+    variables:
+      enabled:
+        description: >
+          Enables the user to search for settings.
+        type: Boolean
+        default: true
 
   tab-management-enhancements:
     description: Control the visibility of the tab management enhancements.
@@ -1022,14 +1022,6 @@ features:
       - channel: nightly
         value:
           enabled: true
-
-  marketing-onboarding-card:
-    description: A temporary feature to control the marketing onboarding card shown during the onboarding flow.
-    variables:
-      enabled:
-        description: If false, the marketing onboarding card will never be shown.
-        type: Boolean
-        default: true
 
   marketing-onboarding-card:
     description: A temporary feature to control the marketing onboarding card shown during the onboarding flow.
@@ -1361,7 +1353,7 @@ types:
             in the settings page, the toolbar section and the re-engagement dialog.
         feature-setting-value:
           description: An integer either 0 or 1 indicating if cookie banner setting should be enabled or disabled,
-             0 for setting the value to disabled, 1  for enabling the setting with the value reject_all.
+            0 for setting the value to disabled, 1  for enabling the setting with the value reject_all.
         feature-setting-value-pbm:
           description: An integer either 0 or 1 indicating if cookie banner setting should be enabled or disabled,
             0 for setting the value to disabled, 1  for enabling the setting with the value reject_all.
