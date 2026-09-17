@@ -586,7 +586,7 @@ class BrowserToolbarSearchMiddleware(
                         onClick = LensButtonClicked,
                     )
                 )
-            } else {
+            } else if (settings.shouldShowQRScanSearch) {
                 add(
                     ActionButtonRes(
                         drawableResId = iconsR.drawable.mozac_ic_qr_code_24,
