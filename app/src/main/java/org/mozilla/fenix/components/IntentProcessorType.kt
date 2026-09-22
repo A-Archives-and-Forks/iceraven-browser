@@ -13,7 +13,7 @@ enum class IntentProcessorType {
     EXTERNAL_APP,
     NEW_TAB,
     EXTERNAL_DEEPLINK,
-    OTHER;
+    OTHER,
     ADDON_INSTALL;
 
     /** The destination activity based on this intent */
@@ -33,7 +33,7 @@ enum class IntentProcessorType {
             EXTERNAL_APP -> true
             NEW_TAB -> intent.flags and Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY == 0
             EXTERNAL_DEEPLINK,
-            OTHER -> false,
+            OTHER -> false
             ADDON_INSTALL -> true
         }
 }

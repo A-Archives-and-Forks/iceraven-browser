@@ -59,8 +59,6 @@ import org.mozilla.fenix.ext.showToolbar
 import org.mozilla.fenix.settings.SupportUtils.AMO_HOMEPAGE_FOR_ANDROID
 import org.mozilla.fenix.theme.ThemeManager
 import java.util.Locale
-import com.google.android.material.R as materialR
-import mozilla.components.feature.addons.R as addonsR
 
 /** Fragment use for managing add-ons. */
 @Suppress("TooManyFunctions", "LargeClass")

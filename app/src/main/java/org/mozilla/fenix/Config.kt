@@ -67,4 +67,5 @@ object Config {
         else -> {
             throw IllegalStateException("Unknown build type: ${BuildConfig.BUILD_TYPE}")
         }
+    }
 }

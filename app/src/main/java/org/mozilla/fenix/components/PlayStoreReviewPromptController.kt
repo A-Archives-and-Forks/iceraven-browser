@@ -27,7 +27,7 @@ class PlayStoreReviewPromptController(
     private val manager: ReviewManager,
     private val numberOfAppLaunches: () -> Int,
 ) {
-recordReviewPromptEvent
+
     /**
      * Launch the in-app review flow, unless we've hit the quota.
      */

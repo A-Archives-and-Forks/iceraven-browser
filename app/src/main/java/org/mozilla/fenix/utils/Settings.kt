@@ -945,7 +945,7 @@ class Settings(
             default = true,
         )
 
-    val shouldShowBookmarkSuggestions b
+    val shouldShowBookmarkSuggestions by
         booleanPreference(
             appContext.getPreferenceKey(R.string.pref_key_search_bookmarks),
             default = true,
