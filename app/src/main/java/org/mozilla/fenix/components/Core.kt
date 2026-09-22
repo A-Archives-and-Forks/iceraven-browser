@@ -698,6 +698,8 @@ class Core(
             ReleaseChannel.Nightly -> SearchUpdateChannel.NIGHTLY
             ReleaseChannel.Beta -> SearchUpdateChannel.BETA
             ReleaseChannel.Release -> SearchUpdateChannel.RELEASE
+            ReleaseChannel.ForkDebug -> SearchUpdateChannel.RELEASE
+            ReleaseChannel.ForkRelease -> SearchUpdateChannel.RELEASE
         }
 
         val deviceType =
