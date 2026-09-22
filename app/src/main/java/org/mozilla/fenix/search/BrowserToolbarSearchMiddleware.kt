@@ -437,7 +437,6 @@ class BrowserToolbarSearchMiddleware(
                         false -> components.core.historyStorage
                     }
                     false -> null
-                    else -> null
                 },
                 when (settings.shouldShowBookmarkSuggestions) {
                     true -> when(browsingModeManager.mode.isPrivate) {
@@ -448,7 +447,6 @@ class BrowserToolbarSearchMiddleware(
                         false -> components.core.bookmarksStorage
                     }
                     false -> null
-                    else -> null
                 },
                 components.core.domainsAutocompleteProvider,
             )
